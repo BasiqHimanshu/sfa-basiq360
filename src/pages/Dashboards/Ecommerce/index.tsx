@@ -1,6 +1,7 @@
 import { BasicBarChart } from "Common/Components/Charts";
 import List from "Common/Components/List";
 import ProgressCard from "Common/Components/ProgressCard";
+import QualifiedEnquiry from "Common/Components/QualifiedEnquiry";
 import TotalEnquiry from "Common/Components/TotalEnquiry";
 import BorderCard from "Common/Components/UIElement/UiCards/BorderCard";
 import React, { useState } from "react";
@@ -12,13 +13,13 @@ const salesDataList = [
   { id: 4, period: "2025 - 2026", val: 90000, nature: "Secondary" },
 ];
 
-
 const Analytics = () => {
   const [buttonState, setButtonState] = useState<"Sales" | "Enquiry">("Sales");
 
   return (
     <React.Fragment>
-      <div className="grid grid-cols-12 gap-x-4 mt-5">
+      {/* Toggle Buttons */}
+      <div className="grid grid-cols-12 gap-4 mt-5">
         <button
           type="button"
           onClick={() => setButtonState("Sales")}
@@ -44,16 +45,18 @@ const Analytics = () => {
         </button>
       </div>
 
+      {/* Sales Section */}
       {buttonState === "Sales" ? (
-        <div className="grid grid-cols-12 gap-x-4 mt-5">
+        <div className="grid grid-cols-12 gap-4 mt-5">
           <div className="col-span-12">
             <BorderCard data={salesDataList} />
           </div>
 
-          <div className="col-span-6">
+          {/* Charts side by side on md+ but stacked on mobile */}
+          <div className="col-span-12 lg:col-span-6">
             <BasicBarChart chartId="sales-bar" />
           </div>
-          <div className="col-span-6 ml-1">
+          <div className="col-span-12 lg:col-span-6">
             <ProgressCard />
           </div>
 
@@ -62,13 +65,14 @@ const Analytics = () => {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-12 gap-x-4 mt-5">
-          <div className="col-span-6">
-            
-            <div className="col-span-6 md:col-span-4">
-              <TotalEnquiry />
-            </div>
+        
+        <div className="card-body grid grid-cols-12 gap-4 mt-5">
+          <div className="col-span-12 lg:col-span-6">
+            <TotalEnquiry />
+          </div>
 
+          <div className="col-span-12 lg:col-span-6">
+            <QualifiedEnquiry />
           </div>
         </div>
       )}
