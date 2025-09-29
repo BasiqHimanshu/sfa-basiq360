@@ -1,5 +1,6 @@
 // dashboard
 import Ecommerce from "pages/Dashboards/Ecommerce";
+import Enquiry from "pages/Enquiry/EnquiryPage";
 
 import UserProfile from "pages/Authentication/UserProfile";
 import Login from "pages/Authentication/Login";
@@ -16,6 +17,9 @@ const authProtectedRoutes: Array<RouteObject> = [
   // Dashboard
   { path: "/", component: Ecommerce },
   { path: "/dashboard", component: Ecommerce },
+  
+  // Enquiry
+  { path : "/enquiry", component: Enquiry},
   
   // profile
   { path: "/user-profile", component: UserProfile },

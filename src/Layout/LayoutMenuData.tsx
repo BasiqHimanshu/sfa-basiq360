@@ -6,45 +6,13 @@ const menuData: any = [
         label: 'Dashboards',
         link: "/#",
         icon: <MonitorDot />,
-        subItems: [
-            {
-                id: 'analyticsdashboard',
-                label: 'Analytics',
-                link: '#',
-                parentId: "dashboard"
-            },
-            {
-                id: 'ecommercedashboard',
-                label: 'Ecommerce',
-                link: '#',
-                parentId: "dashboard"
-            },
-            {
-                id: 'emaildashboard',
-                label: 'Email',
-                link: '#',
-                parentId: "dashboard"
-            },
-            {
-                id: 'hrdashboard',
-                label: 'HR',
-                link: '#',
-                parentId: "dashboard"
-            },
-            {
-                id: 'socialdashboard',
-                label: 'Social',
-                link: '#',
-                parentId: "dashboard"
-            },
-        ]
     },
     
     {
         id: 'enquiry',
         label: 'Enquiry',
         icon: <MessageSquare />,
-        link: '#',
+        link: '/enquiry',
         parentId: 2
     },
     {
