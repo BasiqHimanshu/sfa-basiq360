@@ -5,7 +5,6 @@ import useChartColors from "Common/useChartColors";
 const BasicBarChart = ({ chartId }: any) => {
   const chartColors = useChartColors(chartId);
 
-  // 🔹 Example datasets
   const primaryData = {
     series: [
       {
@@ -48,10 +47,8 @@ const BasicBarChart = ({ chartId }: any) => {
     ],
   };
 
-  // 🔹 Toggle state
   const [isPrimary, setIsPrimary] = useState(true);
 
-  // 🔹 Select dataset based on toggle
   const dataset = isPrimary ? primaryData : secondaryData;
 
   const options: any = {
@@ -76,7 +73,6 @@ const BasicBarChart = ({ chartId }: any) => {
 
   return (
     <React.Fragment>
-      {/* 🔹 Toggle Buttons */}
       <div className="card p-4 border border-custom-100 dark:border-custom-800 rounded-lg shadow-md">
         <div className="flex gap-3 mb-4 justify-between">
             <h4>Top Performers</h4>
@@ -104,7 +100,6 @@ const BasicBarChart = ({ chartId }: any) => {
             </div>
         </div>
 
-        {/* 🔹 Chart */}
         <ReactApexChart
             dir="ltr"
             options={options}

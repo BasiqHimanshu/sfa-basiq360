@@ -18,7 +18,6 @@ const Analytics = () => {
 
   return (
     <React.Fragment>
-      {/* Toggle Buttons */}
       <div className="grid grid-cols-12 gap-4 mt-5">
         <button
           type="button"
@@ -45,7 +44,6 @@ const Analytics = () => {
         </button>
       </div>
 
-      {/* Sales Section */}
       {buttonState === "Sales" ? (
         <div className="grid grid-cols-12 gap-4 mt-5">
           <div className="col-span-12">
